@@ -1,8 +1,17 @@
 import Media from "./MediaDisplay.tsx";
 
 interface Props {
+    /**
+    * plakat filmu
+    */
     poster: string;
+    /**
+    * tytuł filmu
+    */
     title: string;
+    /**
+    * data wydania filmu
+    */
     release_date: number;
 }
 

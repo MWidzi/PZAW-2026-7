@@ -1,9 +1,21 @@
 import Media from "./MediaDisplay.tsx";
 
 interface Props {
+    /**
+    * okładka ksiązki
+    */
     cover: string;
+    /**
+    * tytuł ksiązki
+    */
     title: string;
+    /**
+    * data wydania książki
+    */
     release_date: number;
+    /**
+    * ilość stron ksiązki
+    */
     page_count: number;
 }
 

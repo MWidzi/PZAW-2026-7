@@ -1,11 +1,29 @@
 import Media from "./MediaDisplay.tsx";
 
 interface Props {
+    /**
+    * obrazek z okladka albumu
+    */
     cover: string;
+    /**
+    * tytuł albumu
+    */
     title: string;
+    /**
+    * data wydania albumu
+    */
     release_date: number;
+    /**
+    * wykonawca albumu
+    */
     artist: string;
+    /**
+    * gatunek albumu
+    */
     genre: string;
+    /**
+    * tablica elementów piosenek
+    */
     songs: Array<React.JSX.Element>;
 }
 
