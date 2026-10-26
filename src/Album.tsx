@@ -1,4 +1,6 @@
 import Media from "./MediaDisplay.tsx";
+import type { ComponentProps } from "react";
+import Song from "./Song.tsx";
 
 interface Props {
     /**
@@ -24,17 +26,22 @@ interface Props {
     /**
     * tablica elementów piosenek
     */
-    songs: Array<React.JSX.Element>;
+    songs: Array<ComponentProps<typeof Song>>;
 }
 
 function Album(props: Props) {
     const { cover, title, release_date, artist, genre, songs } = props;
+    let songComponents = songs.map(song => {
+        return (
+            <Song title={song.title} duration={song.duration} />
+        );
+    })
 
     return (
         <>
             <Media image={cover} name={title} release_date={release_date} artist={artist} genre={genre} />
             <h3>Piosenki:</h3>
-            {songs}
+            {songComponents}
         </>
     );
 }

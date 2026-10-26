@@ -8,7 +8,6 @@ interface Props {
     duration?: number;
 }
 
-// Chciałem zrobić trochę bardziej dynamicznie zanim zerknąłem na faktyczne wymagania zadania wiec tak już zostało
 function Media(props: Props) {
     const { image } = props;
 
@@ -17,9 +16,15 @@ function Media(props: Props) {
 
     for (keys in props) {
         if (keys == "image") continue;
-        if (props[keys] === undefined) continue;
+        // wrapper lokalna zmienna bo typescript to super jezyk
+        const val = props[keys];
+        if (val === undefined) continue;
 
-        elements.push(<p>{props[keys]}</p>);
+        if (keys == "release_date" && typeof val === "number" && val < 0) {
+            elements.push(<p>{Math.abs(val)}</p>);
+        }
+
+        elements.push(<p>{val}</p>);
         elements.push(<br />);
     }
 
