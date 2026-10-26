@@ -40,8 +40,10 @@ function Album(props: Props) {
     return (
         <>
             <Media image={cover} name={title} release_date={release_date} artist={artist} genre={genre} />
-            <h3>Piosenki:</h3>
-            {songComponents}
+            {songComponents.length > 0 ? <>
+                <h3>Piosenki:</h3>
+                {songComponents}
+            </> : <h3>Brak utworów</h3>}
         </>
     );
 }

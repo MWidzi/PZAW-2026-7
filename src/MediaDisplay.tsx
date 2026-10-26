@@ -6,6 +6,7 @@ interface Props {
     artist?: string;
     genre?: string;
     duration?: number;
+    rating?: number;
 }
 
 function Media(props: Props) {
