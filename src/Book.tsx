@@ -24,8 +24,7 @@ function Book(props: Props) {
 
     return (
         <>
-            <Media image={cover} name={title} release_date={release_date} page_count={page_count} />
-            {release_date < 2000 ? <p>Klasyka</p> : null}
+            <Media image={cover} name={title} release_date={release_date} page_count={page_count} optionalTag={release_date < 2000 ? <p className="fg-success">Klasyka</p> : undefined} />
         </>
     );
 }

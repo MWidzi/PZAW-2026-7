@@ -33,17 +33,24 @@ function Album(props: Props) {
     const { cover, title, release_date, artist, genre, songs } = props;
     let songComponents = songs.map(song => {
         return (
-            <Song title={song.title} duration={song.duration} />
+            <tr><Song title={song.title} duration={song.duration} /></tr>
         );
     })
 
     return (
         <>
-            <Media image={cover} name={title} release_date={release_date} artist={artist} genre={genre} />
-            {songComponents.length > 0 ? <>
-                <h3>Piosenki:</h3>
-                {songComponents}
-            </> : <h3>Brak utworów</h3>}
+            <Media image={cover} name={title} release_date={release_date} artist={artist} genre={genre} optionalTag={
+                songComponents.length > 0 ?
+                    <>
+                        <h4 className="fg-info">Songs:</h4>
+                        <table className="table table-sm table-striped">
+                            <tbody>
+                                {songComponents}
+                            </tbody>
+                        </table>
+                    </> :
+                    <div className="alert alert-secondary" role="alert">Brak utworów</div>
+            } />
         </>
     );
 }

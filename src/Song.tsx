@@ -8,8 +8,8 @@ function Song(props: Props) {
 
     return (
         <>
-            <p>{title}  {Math.floor(duration / 60)}:{String(duration % 60).padStart(2, '0')}</p>
-            <br />
+            <td>{title}</td>
+            <td className="text-end">{Math.floor(duration / 60)}:{String(duration % 60).padStart(2, '0')}</td>
         </>
     );
 }

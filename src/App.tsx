@@ -41,7 +41,7 @@ function App() {
         },
         {
             "cover": "https://m.media-amazon.com/images/I/91HjK3oSJwL._AC_UF1000,1000_QL80_.jpg",
-            "title": "Reinkarnowany jako galareta",
+            "title": "Reincarnated as a slime",
             "release_date": 2014,
             "page_count": 300
         }
@@ -63,10 +63,10 @@ function App() {
         },
         {
             "cover": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
-            "title": "test braku piosenek",
+            "title": "no songs test",
             "release_date": 2026,
-            "artist": "Nieznany",
-            "genre": "Nieznany",
+            "artist": "Unknown",
+            "genre": "Unknown",
             "songs": []
         },
     ];
@@ -123,12 +123,14 @@ function App() {
 
     return (
         <>
-            <GalleryRenderer title="Filmy" elements={movieElements} />
-            <GalleryRenderer title="Książki" elements={booksElements} />
-            <GalleryRenderer title="Albumy" elements={albumsElements} />
-            <GalleryRenderer title="Filmy wydane po 2010 roku" elements={movieAfter2010Elements} />
-            <GalleryRenderer title="Książki w kolejności wydania" elements={booksByDateElements} />
-            <GalleryRenderer title="Album z największą ilością piosenek" elements={mostSongsAlbum} />
+            <div className="container">
+                <GalleryRenderer title="Filmy" elements={movieElements} />
+                <GalleryRenderer title="Książki" elements={booksElements} />
+                <GalleryRenderer title="Albumy" elements={albumsElements} />
+                <GalleryRenderer title="Filmy wydane po 2010 roku" elements={movieAfter2010Elements} />
+                <GalleryRenderer title="Książki w kolejności wydania" elements={booksByDateElements} />
+                <GalleryRenderer title="Album z największą ilością piosenek" elements={mostSongsAlbum} />
+            </div>
         </>
     );
 }

@@ -24,8 +24,7 @@ function Movie(props: Props) {
 
     return (
         <>
-            <Media image={poster} name={title} release_date={release_date} rating={rating} />
-            {rating >= 8 ? <p>Polecany</p> : null}
+            <Media image={poster} name={title} release_date={release_date} rating={rating} optionalTag={rating >= 8 ? <p className="fg-success">Polecany</p> : undefined} />
         </>
     );
 }
