@@ -124,9 +124,9 @@ function App() {
     return (
         <>
             <div className="container">
-                <GalleryRenderer title="Filmy" elements={movieElements} searchId="movie-search" />
-                <GalleryRenderer title="Książki" elements={booksElements} searchId="book-search" />
-                <GalleryRenderer title="Albumy" elements={albumsElements} searchId="album-search" />
+                <GalleryRenderer title="Filmy" elements={movieElements} searchId="movie" />
+                <GalleryRenderer title="Książki" elements={booksElements} searchId="book" />
+                <GalleryRenderer title="Albumy" elements={albumsElements} searchId="album" />
                 <GalleryRenderer title="Filmy wydane po 2010 roku" elements={movieAfter2010Elements} />
                 <GalleryRenderer title="Książki w kolejności wydania" elements={booksByDateElements} />
                 <GalleryRenderer title="Album z największą ilością piosenek" elements={mostSongsAlbum} />
