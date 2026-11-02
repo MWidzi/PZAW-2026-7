@@ -2,11 +2,12 @@ import { useState } from "react";
 
 interface Props {
     title: string;
+    searchId?: string;
     elements: Array<React.JSX.Element>;
 }
 
 function GalleryRenderer(props: Props) {
-    const { title, elements } = props;
+    const { title, searchId, elements } = props;
     const [isOpen, setIsOpen] = useState(true);
 
     return (
@@ -15,13 +16,23 @@ function GalleryRenderer(props: Props) {
                 {title} {isOpen ? <span>⏵</span> : <span>⏷</span>}
             </h1>
             {isOpen && (
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
-                    {elements.map((element, index) => (
-                        <div className="col" key={index}>
-                            {element}
-                        </div>
-                    ))}
-                </div>
+                <>
+                    {searchId !== undefined ?
+                        <input
+                            id={searchId}
+                            type="text"
+                            className="form-control mb-5"
+                            placeholder="Wpisz tytuł"
+                        />
+                        : null}
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                        {elements.map((element, index) => (
+                            <div className="col" key={index}>
+                                {element}
+                            </div>
+                        ))}
+                    </div>
+                </>
             )}
         </>
     );

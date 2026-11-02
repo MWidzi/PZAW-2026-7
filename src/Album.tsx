@@ -33,9 +33,16 @@ function Album(props: Props) {
     const { cover, title, release_date, artist, genre, songs } = props;
     let songComponents = songs.map(song => {
         return (
-            <tr><Song title={song.title} duration={song.duration} /></tr>
+            <tr onClick={(event) => {
+                event.stopPropagation();
+                handleSongClick(song.title)
+            }}><Song title={song.title} duration={song.duration} /></tr>
         );
     })
+
+    function handleSongClick(songTitle: String) {
+        console.log("Wybrano utwór: " + songTitle + " z " + title);
+    }
 
     return (
         <>
