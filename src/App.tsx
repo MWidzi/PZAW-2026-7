@@ -62,6 +62,26 @@ function App() {
                 <option value={"1"}>Wykonane</option>
                 <option value={"0"}>Niewykonane</option>
             </select>
+            <select onChange={event => {
+                if (event.target.value === "normal") {
+                    setFilteredTasks(filteredTasks);
+                } else if (event.target.value === "alphabetical") {
+                    let temp = filteredTasks.sort((a, b) => {
+                        if (a.name < b.name) {
+                            return -1;
+                        }
+                        if (a.name > b.name) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+
+                    setFilteredTasks(temp);
+                }
+            }}>
+                <option value={"normal"}>Zwykle</option>
+                <option value={"alphabetical"}>alfabetyczne</option>
+            </select>
             {elements}
             <p>Ilość zrobionych zadań: <b>{getChecked().length}</b></p>
         </>
